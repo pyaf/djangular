@@ -1,6 +1,11 @@
-# Angular 4 with Django Rest Framework
+# Angular with Django REST Framework JWT
 
-User authentication and login using angular (4.3.1) and Django Rest Framework.
+Integrating Angular (v4) with Django (v1.11), this project uses the concept of JSON web token based authentication for User session management.
+
+### Stack
+
+* Angular (4.3.1)
+* Django (1.11.5)
 
 
 ### To Run the project
@@ -9,17 +14,16 @@ User authentication and login using angular (4.3.1) and Django Rest Framework.
 *	`python manage.py runserver`
 
 
-### Development
+### My djangular way of development
 
 Open two terminals:
 
-1. For angular
+For angular
 
-*	`cd angular`
+*	`cd angular/`
 *	`npm install` # one time installation of dependencies
 *	`ng build -op=../backend/templates/angular/ -w -dop false`
 
-2. For Django
+For Django
 
 *	`python manage.py runserver`
-
