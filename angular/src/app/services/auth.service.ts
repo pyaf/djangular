@@ -1,24 +1,31 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
+import { CookieService } from 'angular2-cookie/core';
+
 import 'rxjs/add/operator/toPromise'
 
 @Injectable()
 export class AuthService {
-	private BASE_URL: string = 'http://localhost:5000/auth';
-	private headers: Headers = new Headers({'content-type': 'application/json'})
-	constructor(private http: Http){}
+  public headers: Headers = new Headers({
+        'content-type': 'application/json',
+        'X-CSRFToken': this.cookieservice.get('csrftoken')
+      })  	
+
+  constructor(private http: Http, private cookieservice: CookieService ){}
 
 	login(user): Promise <any> {
-		let url: string = `$(this.BASE_URL)/login`;
+		let url: string = '/api-login-user/';
+		console.log(document.cookie['csrftoken']);
 		return this.http.post(url, user, {headers:
 								 this.headers}).toPromise();
 	}
 
 	register(user): Promise <any>{
-		let url: string = `$(this.BASE_URL)/register`;
+		let url: string = '/api-register-user/';
 		return this.http.post(url, user, {headers:
 								this.headers}).toPromise();
 	}
+
 }
 
 

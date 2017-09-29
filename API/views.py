@@ -53,11 +53,14 @@ class LoginUserView(APIView):
         user = authenticate(username=username, password=password)
         if user:
             payload = jwt_payload_handler(user)
-            token = {'token': jwt.encode(payload, SECRET_KEY)}            
+            token = {
+                'token': jwt.encode(payload, SECRET_KEY),
+                'status': 'success'
+                }            
             return Response(token)
         else:
             return Response(
-              {'Error': "Invalid credentials"},
-              status=400,
+              {'error': 'Invalid credentials',
+              'status': 'failed'},
             )
 

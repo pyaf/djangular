@@ -27,3 +27,8 @@ For angular
 For Django
 
 *	`python manage.py runserver`
+
+
+Notes:
+
+`npm install angular2-cookie --save`
