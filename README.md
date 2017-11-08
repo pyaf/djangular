@@ -1,6 +1,6 @@
 # Angular with Django REST Framework JWT
 
-Integrating Angular (v4) with Django (v1.11), this project uses the concept of JSON web token based authentication for User session management.
+Integrating Angular (v4) with Django (v1.11), this project uses the concept of JSON web token based authentication for User session management. The project is still under development.
 
 ### Stack
 
@@ -22,7 +22,7 @@ For angular
 
 *	`cd angular/`
 *	`npm install` # one time installation of dependencies
-*	`ng build -op=../backend/templates/angular/ -w -dop false`
+*	`ng build -op=../backend/templates/angular/ -w`
 
 For Django
 
